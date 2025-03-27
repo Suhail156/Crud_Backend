@@ -6,7 +6,17 @@ import itemRoutes from './Routes/itemRoute.js'
 import cors from 'cors'
 dotenv.config()
 const app=express()
-app.use(cors("http://localhost:3520"))
+// app.use(cors("http://localhost:3520"))
+
+app.use(cors({
+    origin: [
+        'https://crud-frontend-kohl-nine.vercel.app/'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+}));
+
+
+
 mongoose.connect(process.env.DB)
  
 .then(()=>console.log("db connected"))
