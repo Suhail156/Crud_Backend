@@ -8,12 +8,15 @@ dotenv.config()
 const app=express()
 // app.use(cors("http://localhost:3520"))
 
-app.use(
+const allowedOrigins = [
+    "https://crud-frontend-kohl-nine.vercel.app",
+    "https://crud-frontend-git-main-muhammad-suhails-projects.vercel.app",
+    "https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app",
+  ];
+  
+  app.use(
     cors({
-      origin: [
-        "https://crud-frontend-kohl-nine.vercel.app",
-        "https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app",
-      ],
+      origin: allowedOrigins,
       credentials: true,
     })
   );
