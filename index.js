@@ -8,16 +8,14 @@ dotenv.config()
 const app=express()
 // app.use(cors("http://localhost:3520"))
 
-app.use(
-    cors({
-      origin: [
-        "https://crud-frontend-git-main-muhammad-suhails-projects.vercel.app", // ✅ Add this exact URL
-        "https://crud-frontend-kohl-nine.vercel.app" // (Keep this if still needed)
-      ],
-      methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-      credentials: true, // ✅ Allows cookies, auth headers
-    })
-  );
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
 
 
 
