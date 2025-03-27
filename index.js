@@ -11,11 +11,11 @@ const app=express()
 app.use(
     cors({
       origin: [
-        "https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app",
-        "https://crud-frontend-kohl-nine.vercel.app" // Add this if needed
+        "https://crud-frontend-git-main-muhammad-suhails-projects.vercel.app", // ✅ Add this exact URL
+        "https://crud-frontend-kohl-nine.vercel.app" // (Keep this if still needed)
       ],
       methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-      credentials: true, // Allow cookies & authorization headers
+      credentials: true, // ✅ Allows cookies, auth headers
     })
   );
 
