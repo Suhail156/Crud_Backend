@@ -8,18 +8,22 @@ dotenv.config()
 const app=express()
 // app.use(cors("http://localhost:3520"))
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    next();
-});
+app.use(
+    cors({
+      origin: [
+        "https://crud-frontend-kohl-nine.vercel.app",
+        "https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app",
+      ],
+      credentials: true,
+    })
+  );
+  
 
 
 
 
 mongoose.connect(process.env.DB)
+
  
 .then(()=>console.log("db connected"))
 .catch((error)=>console.log(error))
