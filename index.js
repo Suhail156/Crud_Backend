@@ -8,12 +8,16 @@ dotenv.config()
 const app=express()
 // app.use(cors("http://localhost:3520"))
 
-app.use(cors({
-    origin: [
-        'https://crud-frontend-kohl-nine.vercel.app/'
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
-}));
+app.use(
+    cors({
+      origin: [
+        "https://crud-frontend-euigg8u4m-muhammad-suhails-projects.vercel.app",
+        "https://crud-frontend-kohl-nine.vercel.app" // Add this if needed
+      ],
+      methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+      credentials: true, // Allow cookies & authorization headers
+    })
+  );
 
 
 
